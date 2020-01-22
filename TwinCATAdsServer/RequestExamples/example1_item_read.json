@@ -1,0 +1,8 @@
+/*example 1 item read*/
+{
+  "request_type": "read",
+  "items": {
+    "names": [ "myVariable1", "myVariable2" ],
+    "types": [ "uint", "float" ]
+  }
+}

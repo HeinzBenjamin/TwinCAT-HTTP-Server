@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinCATAdsServer", "TwinCATAdsServer\TwinCATAdsServer.csproj", "{45D3EB17-FF10-4B67-BF27-FCAF2F431672}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45D3EB17-FF10-4B67-BF27-FCAF2F431672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45D3EB17-FF10-4B67-BF27-FCAF2F431672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45D3EB17-FF10-4B67-BF27-FCAF2F431672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45D3EB17-FF10-4B67-BF27-FCAF2F431672}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B03C424B-1C5C-48C6-8DEE-58C40C7B2FCD}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+﻿<Window x:Class="TwinCATAdsServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwinCATAdsServer"
+        mc:Ignorable="d"
+        Title="TwinCAT Ads Server" Height="720" Width="1440"
+        Closing="Window_Closing">
+    <Grid Margin="3,3,3,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="148"/>
+                <RowDefinition  />
+                <RowDefinition Height="3"/>
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+            <Rectangle Fill="#E4E4E4" Height="76" Margin="2,3,0,0" Stroke="Gray" VerticalAlignment="Top" Grid.Row="0"/>
+            <TextBlock x:Name="textBlock_titleTwinCATInput" HorizontalAlignment="Left" Height="17" Margin="8,10,0,0" TextWrapping="Wrap" Text="TwinCAT Host Info" VerticalAlignment="Top" Width="187" Foreground="DimGray"  Grid.Row="0"/>
+            <TextBox x:Name="textBox_tcHostIn" Height="19" Margin="5,32,89,0" TextWrapping="Wrap" Text="192.168.137.1.1.1" VerticalAlignment="Top" Foreground="Gray" Grid.Row="0">
+                <TextBox.ToolTip>AmsNetId as specified in TwinCAT Project. Go to TwinCAT > Project > System > Routes.</TextBox.ToolTip>
+            </TextBox>
+            <TextBox x:Name="textBox_tcPort" Height="19" Margin="5,56,89,0" TextWrapping="Wrap" Text="852" VerticalAlignment="Top" Foreground="Gray" Grid.Row="0">
+                <TextBox.ToolTip>Port number of the TwinCAT Instance to receive requests. Can be left at default if it wasn't explicitly changed inside TC3</TextBox.ToolTip>
+            </TextBox>
+            <Button x:Name="button_connectTwinCAT" Click="Button_connectTwinCAT_Click" Content="Connect" Height="43" Margin="0,32,3,0" VerticalAlignment="Top"  Grid.Row="0" HorizontalAlignment="Right" Width="81"/>
+
+            <Rectangle Fill="#E4E4E4" Height="52" Margin="3,83,0,0" Stroke="Gray" VerticalAlignment="Top"  Grid.Row="0"/>
+            <TextBox x:Name="textBox_httpPort" Height="19" Margin="5,112,89,0" TextWrapping="Wrap" Text="8518" VerticalAlignment="Top" Foreground="Gray"  Grid.Row="0">
+                <TextBox.ToolTip>Port number of the TwinCAT Instance to receive requests. Can be left at default if it wasn't explicitly changed inside TC3</TextBox.ToolTip>
+            </TextBox>
+            <Button x:Name="button_connectHttp" Click="Button_connectHttp_Click" Content="Start" Height="19" Margin="0,112,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Grid.Row="0"/>
+            <TextBlock x:Name="textBlock_titleTwinCATInput_Copy" Height="17" Margin="8,90,0,0" TextWrapping="Wrap" Text="HTTP Server Info" VerticalAlignment="Top" Foreground="DimGray" HorizontalAlignment="Left" Width="174" Grid.Row="0"/>
+            <Separator Margin="5,0,5,0" Height="2" VerticalAlignment="Bottom" Background="LightGray" Grid.Row="3"/>
+            <Separator Margin="5,0,5,5" Height="2" VerticalAlignment="Bottom" Background="LightGray" Grid.Row="0"/>
+
+            <Rectangle Fill="#E4E4E4" Margin="3,3,0,0" Stroke="Gray" Grid.Row="1"/>
+            <Button x:Name="button_sendManReq" Click="button_sendManReq_Click" Content="Send" Height="19" Margin="0,8,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Grid.Row="1"/>
+            <TextBlock x:Name="textBlock_titleTwinCATInput_Copy1" Height="17" Margin="8,10,92,0" TextWrapping="Wrap" Text="Manual Request" VerticalAlignment="Top" Foreground="DimGray" Grid.Row="1"/>
+            <TextBox x:Name="textBox_manReqIn" Margin="6,30,3,3" Text="{}" TextChanged="textBox_manReqIn_TextChanged" TextWrapping="Wrap" AcceptsReturn="True" FontFamily="Consolas" Grid.Row="1"/>
+
+            <GridSplitter Grid.Row="2"
+              ResizeDirection="Rows"
+              ResizeBehavior="PreviousAndNext" Margin="0,0" HorizontalAlignment="Stretch" Background="White"/>
+            <Button ToolTip="Copy http request URL to clipboard containing the specified json parameters. You can then send this request from a browser or where ever." x:Name="button_copyManReqUrl" Click="button_copyManReqUrl_Click" Content="Copy as URL" Height="19" Margin="0,8,89,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="81" Grid.Row="1"/>
+            <Rectangle Fill="#E4E4E4" Margin="3,4,0,2" Stroke="Gray" Grid.Row="3"/>
+            <TextBlock x:Name="textBlock_titleTwinCATInput_Copy2" Height="17" Margin="8,11,92,0" TextWrapping="Wrap" Text="Response" VerticalAlignment="Top" Foreground="DimGray" Grid.Row="3"/>
+            <TextBox x:Name="textBox_manReqOut" Margin="6,31,3,5" Text="" TextChanged="textBox_manReqIn_TextChanged" TextWrapping="Wrap" AcceptsReturn="True" FontFamily="Consolas" Grid.Row="3"/>
+        </Grid>
+        <GridSplitter Grid.Column="1"
+              ResizeDirection="Columns"
+              ResizeBehavior="PreviousAndNext" Margin="0,0" HorizontalAlignment="Stretch" Background="White"/>
+        <RichTextBox x:Name="richTextBox_logHTTPServer"  Grid.Column="2" Background="#333338" Margin="0.5,3,0,0"  BorderThickness="0" TextChanged="RichTextBox_logHTTPServer_TextChanged" FontFamily="Consolas">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+
+        <GridSplitter Grid.Column="3"
+              ResizeDirection="Columns"
+              ResizeBehavior="PreviousAndNext" Margin="0,0" HorizontalAlignment="Stretch" Background="White"/>
+
+        <RichTextBox x:Name="richTextBox_logTwinCAT" Grid.Column="4" Background="#333333" Margin="0,3,-0.5,0" BorderThickness="0" FontFamily="Consolas" TextChanged="richTextBox_logTwinCAT_TextChanged">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0" />
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+        <StatusBar x:Name="statusBar_http" Grid.Column="2" Grid.Row="1" Height="24" VerticalAlignment="Bottom" Margin="1,0,0,0">
+            <Label x:Name="label_statusBar_http" Content="Label" Height="20" Width="167" FontSize="14" VerticalAlignment="Center" Padding="2,1,0,0" FontFamily="Consolas"/>
+        </StatusBar>
+        <StatusBar x:Name="statusBar_twinCAT" Grid.Column="4" Height="24" VerticalAlignment="Bottom" Grid.Row="1">
+            <Label x:Name="label_statusBar_twinCAT" Content="Label" Height="20" Width="167" FontSize="14" VerticalAlignment="Center" Padding="2,1,0,0" FontFamily="Consolas"/>
+        </StatusBar>
+        <CheckBox x:Name="checkBox" Grid.Column="0" Grid.Row="1" Content="Verbose Log" IsChecked="True" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" Height="18" VerticalAlignment="Bottom" Margin="5,0,0,0" HorizontalAlignment="Left" Width="90"/>
+        <Image x:Name="UTS_Logo_Horizontal_Lockup_BLK_png" Margin="0,69,2,0" Source="UTS_Logo_Horizontal_Lockup_BLK.png" Stretch="Fill" Grid.Column="4" Opacity="0.1" Height="63" VerticalAlignment="Top" HorizontalAlignment="Right" Width="145"/>
+        <Image x:Name="Uni_stuttgart_logo_english_png" Margin="0,17,12,0" Source="Uni_stuttgart_logo_english.png" Stretch="Fill" Grid.Column="4" Opacity="0.1" HorizontalAlignment="Right" Width="127" Height="42" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="?" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1"  Padding="0" HorizontalAlignment="Right" Width="16" >
+            <Label.ToolTip>
+                <TextBlock>Author: benjamin@felbrich.com
+                    <LineBreak />University of Stuttgart, Germany
+                    <LineBreak />University of Technology Sydney, Australia
+                    <LineBreak />Free to use under MIT License
+                </TextBlock></Label.ToolTip>
+        </Label>
+    </Grid>
+</Window>

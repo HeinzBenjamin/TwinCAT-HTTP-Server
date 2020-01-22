@@ -1,0 +1,5 @@
+{
+  "request_type": "read",
+  "names": [ "GVL.FanOn", "GVL.bHeatOn" ],
+  "types": [ "bool", "bool[4]" ]
+}
