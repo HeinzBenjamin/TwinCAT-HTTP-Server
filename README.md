@@ -7,7 +7,7 @@ Access to TwinCAT 3 data via http requests and json. This let's you easily read 
 Download the latest Release. Put everything in one folder on your computer.
 
 # Usage
-1. Run the 'Start_TwinCAT-Http-Server' shortcut in the main folder with your TwinCAT 3 project running on the same machine (admin right required).
+1. Run the 'Start_TwinCAT-Http-Server' shortcut in the main folder with your TwinCAT 3 project running on the same machine (admin rights required).
 2. In the upper left corner, define the TwinCAT address and port. Hit "Connect" to connect to TwinCAT. The right log text box shows all messages regarding this backend connection between TwinCAT-HTTP-Server and TwinCAT
 3. Set port for local http server. Hit "Start" to start listening for incoming http requests. The left log text box shows all messages regarding incoming Http messages and the server itself.
 4. You can now make requests from anywhere in the network using Http GET or POST requests.
@@ -19,7 +19,7 @@ Download the latest Release. Put everything in one folder on your computer.
 
 ## Info
 TwinCAT-Http-Server internally starts a restful ASP.NET WebAPI. This should take care of all network configurations and open the relevant ports to your host machine.
-However, if you experience problems such as 'Access denied' or similar, check you network configuration using thtse steps:
+However, if you experience problems such as 'Access denied' or similar, you might have to configure your network a bit. 
 This will most likely involve [opening the port on the host machine's firewall and defining a binding in the IIS manager](https://stackoverflow.com/questions/22044470/bad-request-invalid-hostname-while-connect-to-localhost-via-wifi-from-mobile-ph)<br>
 To get the IIS manager to work use [this tutorial](https://stackoverflow.com/questions/30901434/iis-manager-in-windows-10).<br>
 Try to ping between the host machine and the remote machine.<br>
