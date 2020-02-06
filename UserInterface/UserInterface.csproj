@@ -106,10 +106,14 @@
   <ItemGroup>
     <None Include="RequestExamples\example1_read_items_arrays.json" />
     <None Include="RequestExamples\example2_write_items_arrays.json" />
-    <None Include="Uni_Stuttgart_Logo.png" />
+    <None Include="Uni_Stuttgart_Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UTS_Logo.png" />
+    <None Include="UTS_Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

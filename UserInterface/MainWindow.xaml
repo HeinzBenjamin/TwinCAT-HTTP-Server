@@ -97,8 +97,8 @@
                 </TextBlock>
             </Label.ToolTip>
         </Label>
-        <Image x:Name="Uni_Stuttgart_Logo" Margin="0,20,0,0" Source="Uni_Stuttgart_Logo.png" Stretch="Uniform" Grid.Column="2" Opacity="0.02" HorizontalAlignment="Right" Width="502" Height="639" VerticalAlignment="Top"/>
-        <Image x:Name="UTS_Logo_png" Margin="0,4,10,0" Source="UTS_Logo.png" Stretch="Fill" Grid.Column="4" Opacity="0.02" HorizontalAlignment="Right" Width="356" Height="623" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox_examples" SelectionChanged="comboBox_examples_SelectionChanged" HorizontalAlignment="Left" Margin="4,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" Height="19" FontFamily="Droid Sans Mono" FontSize="10" Text="Select example" IsEditable="True" IsReadOnly="True"/>
+        <Image x:Name="pack___siteoforigin_____Uni_Stuttgart_Logo_png" Margin="0,20,0,0" Source="pack://siteoforigin:,,,/Uni_Stuttgart_Logo.png" Stretch="Uniform" Grid.Column="2" Opacity="0.02" HorizontalAlignment="Right" Width="502" Height="639" VerticalAlignment="Top"/>
+        <Image x:Name="pack___siteoforigin_____UTS_Logo_png" Margin="0,4,10,0" Source="pack://siteoforigin:,,,/UTS_Logo.png" Stretch="Fill" Grid.Column="4" Opacity="0.02" HorizontalAlignment="Right" Width="356" Height="623" VerticalAlignment="Top"/>
     </Grid>
 </Window>
