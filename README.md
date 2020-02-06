@@ -18,15 +18,14 @@ Download the latest Release. Put everything in one folder on your computer.
 9. Code snippets to make correct requests for all kinds of programming languages can be found in the 'RequestExamples' folder.
 
 ## Info
-TwinCAT-Http-Server internally starts a restful ASP.NET WebAPI. This should take care of all network configurations and open the relevant ports to your host machine.
-However, if you experience problems such as 'Access denied' or similar, you might have to configure your network a bit. 
+TwinCAT-Http-Server internally uses a restful ASP.NET WebAPI. This should take care of all network configurations and open the relevant ports to your host machine.
+However, if you experience problems such as 'Access denied' or similar, you might have to configure your network a bit.<br>
 This will most likely involve [opening the port on the host machine's firewall and defining a binding in the IIS manager](https://stackoverflow.com/questions/22044470/bad-request-invalid-hostname-while-connect-to-localhost-via-wifi-from-mobile-ph)<br>
 To get the IIS manager to work use [this tutorial](https://stackoverflow.com/questions/30901434/iis-manager-in-windows-10).<br>
 Try to ping between the host machine and the remote machine.<br>
-By default TwinCAT-HTTP-Server will listen to the specified port number on all IPs. So it is up to you which IPs you [open up for listening using netsh](https://stackoverflow.com/questions/47969786/c-sharp-httplistener-the-format-of-the-specified-network-name-is-not-valid).<br>
-A combination of these things and googling should do the trick for your specific network.
+By default TwinCAT-HTTP-Server will listen to all routes specified in the left log window at server start up.<br>
 
-When this works you will be able to read and write TwinCAT variables from any http capable device in your network.<br><br>
+When this works you will be able to read and write TwinCAT variables from any Http capable device in your network.<br><br>
 
 # Get code
 `git clone https://github.com/HeinzBenjamin/TwinCAT-HTTP-Server.git`
