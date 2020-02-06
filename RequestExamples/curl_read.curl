@@ -1,0 +1,3 @@
+curl --location --request POST 'http://localhost:8528/twincat' \
+--header 'Content-Type: application/json' \
+--data-raw '{"request_type": "read","names":["GVL.bFanOn", "GVL.bHeatOn", "MAIN.dMotorSpeed", "MAIN.bLedsOn"],"types":["bool","bool","lreal","bool[6]"]}'

@@ -1,0 +1,12 @@
+/*Example file to read singular items and item arrays from TwinCATAds*/
+{
+  "request_type": "write",
+  "names": [ "GVL.bFanOn", "GVL.bHeatOn", "MAIN.dMotorSpeed", "MAIN.bLedsOn" ],
+  "types": [ "bool", "bool", "lreal", "byte[6]" ],
+  "values": [
+    true,
+    true,
+    3.141,
+    [0,0,4,8,16,128]
+  ]
+}
