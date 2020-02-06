@@ -1,5 +1,5 @@
 # TwinCAT-HTTP-Server
-Access to TwinCAT 3 data via http requests and json. This let's you easily read and write data and thus control TwinCAT workflows from anywhere in your network using any programming language or a browser.You can also test and plan complex json requests in the manual request mode.
+Access to TwinCAT 3 data via Http requests and json. This let's you easily read and write data and thus control TwinCAT workflows from anywhere in your network using any programming language or a browser.You can also test and plan complex json requests in the manual request mode.
 
 ![alt text](https://github.com/HeinzBenjamin/TwinCATAds-HTTPServer/blob/master/screenshot.jpg "TwinCATAds HTTP Server screenshot")
 
@@ -15,7 +15,7 @@ Download the latest Release. Put everything in one folder on your computer.
 6. Edit this example to your needs and send manual requests by clicking "Send" for testing.
 (7. Under development: Copy this manual request in URL form to the clipboard by clicking the 'Copy as URL' button. Paste it to a browser to test the connection)
 8. You can now control TwinCAT from your host machine using http requests in [Python](https://www.geeksforgeeks.org/get-post-requests-using-python/), [JavaScript](https://www.freecodecamp.org/news/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa/), [C#](https://stackoverflow.com/questions/27108264/c-sharp-how-to-properly-make-a-http-web-get-request), [Postman](https://www.getpostman.com), a [browser](https://www.opera.com) or whatever else can speak HTTP.
-9. Code snippets to make correct requests for all kinds of programming languages can be found in the 'RequestExamples' folder.
+9. Code snippets to make correct POST requests for all kinds of programming languages can be found in the 'RequestExamples' folder. (GET is also supported, but POST is preferred)
 
 ## Info
 TwinCAT-Http-Server internally uses a restful ASP.NET WebAPI. This should take care of all network configurations and open the relevant ports to your host machine.
@@ -33,3 +33,6 @@ When this works you will be able to read and write TwinCAT variables from any Ht
 # Acknowledgement
 Special thanks to [Tran Dang](https://www.uts.edu.au/staff/trantuananh.dang) at the University of Technology Sydney for great support and insight into TwinCAT 3 and the EtherCAT ecosystem.
 This project was funded by the [German Research Exchange Service](https://www.daad.de/en/) (DAAD)
+
+# Contact
+benjamin@felbrich.com
